@@ -624,7 +624,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Mic, MicOff, Video, VideoOff, Monitor, MessageSquare, LogOut, Users, X, Grid, Layout } from "lucide-react"
 
 // Server ka URL jahan pe hamara backend chal raha hai
-const SERVER_URL = "http://localhost:8000"
+const SERVER_URL = "https://letsmeet-wloh.onrender.com"
 // Jab koi screen share nahi kar raha, tab maximum kitne videos dikhenge
 const MAX_VISIBLE_VIDEOS = 6
 

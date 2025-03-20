@@ -622,6 +622,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Mic, MicOff, Video, VideoOff, Monitor, MessageSquare, LogOut, Users, X, Grid, Layout } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 // Server ka URL jahan pe hamara backend chal raha hai
 const SERVER_URL = "https://letsmeet-wloh.onrender.com"
@@ -643,6 +644,8 @@ export default function VideoMeetComponent() {
   const [isChatOpen, setIsChatOpen] = useState(false) // Kya chat window open hai
   const [isParticipantsOpen, setIsParticipantsOpen] = useState(false) // Kya participants list open hai
   const [layout, setLayout] = useState("grid") // Video layout - grid ya spotlight
+
+  const navigate = useNavigate()
 
   // Refs jo DOM elements aur streams ko track karte hain
   const socketRef = useRef() // Socket connection ka reference
@@ -1140,7 +1143,9 @@ export default function VideoMeetComponent() {
               variant="destructive"
               size="lg"
               className="rounded-full h-12 w-12"
-              onClick={() => window.location.reload()}
+              onClick={() => {window.location.reload();
+                navigate('/');
+              }}
             >
               <LogOut className="h-5 w-5" />
             </Button>
